@@ -1,19 +1,37 @@
-# VisualizadorSalud 📊
+# Visualizador de Datos 📊
 
-Clase en Python para centralizar y automatizar la generación de gráficos estadísticos a partir del dataset de tasas de enfermedades oftalmológicas en México (2000–2022), aplicando principios de Programación Orientada a Objetos (POO).
+Clase modular en Python para la generación de gráficos estadísticos a partir de archivos CSV. Desarrollada aplicando principios de **Programación Orientada a Objetos (POO)**, con enfoque en **modularidad**, **reutilización** y **robustez**.
+
+Este proyecto es el resultado de una refactorización completa de la clase original `VisualizadorSalud`, transformándola en una herramienta genérica capaz de trabajar con cualquier dataset estructurado en formato CSV.
+
+---
+
+## ✨ Características
+
+- **Totalmente genérica**: No depende de nombres de columnas fijos.
+- **Robusta**: Manejo de errores, validaciones y mensajes claros.
+- **Modular**: Métodos reutilizables.
+- **Interactiva**: Menú en consola para generar gráficos fácilmente.
+- Soporta **barras agrupadas** (Seaborn + Matplotlib).
+- Preparada para extenderse con más tipos de gráficos (líneas, plotly, etc.).
 
 ---
 
 ## Requisitos
 
-- Python 3.14
-- Las siguientes librerías (ver `requirements.txt`):
+- Python 3.8 o superior
+- Librerías:
 
-```
+```bash
 matplotlib
 seaborn
-plotly
 pandas
+```
+
+Puedes instalarlas con:
+
+```bash
+pip install -r requirements.txt
 ```
 
 ---
@@ -26,7 +44,7 @@ pandas
 git clone https://github.com/FatimaFig13/Clase-Modular-de-Graficaci-n-y-An-lisis-Visual.git
 ```
 
-2. Entra a la carpeta del proyecto:
+2. Ingresa a la carpeta del proyecto:
 
 ```bash
 cd Clase-Modular-de-Graficaci-n-y-An-lisis-Visual
@@ -42,29 +60,17 @@ pip install -r requirements.txt
 
 ## Uso
 
-Ejecuta el archivo principal:
+Ejecuta el programa:
 
 ```bash
 python graficos.py
 ```
 
-Se mostrará un menú en consola donde puedes elegir la gráfica que deseas generar:
+Se abrirá un menú interactivo donde podrás:
 
-```
-Elija la grafica que desea visualizar:
-[1] Grafica de barras de sexo
-[2] Grafica de linea temporal
-[3] Grafica de barras de Entidades
-[4] Salir
-Seleccion:
-```
+- Cargar tu archivo CSV
+- Seleccionar columnas para los ejes X, Y y agrupación
+- Aplicar filtros (opcional)
+- Generar y guardar automáticamente la gráfica
 
-Las gráficas generadas se guardan automáticamente en la misma carpeta del proyecto:
 
-| Opción | Archivo | Librería |
-|--------|---------|----------|
-| 1 | `barras_sexo.png` | Seaborn |
-| 2 | `linea_temporal.png` | Matplotlib |
-| 3 | `barras_estados.html` | Plotly |
-
-> La gráfica 3 se guarda como `.html` y puede abrirse en cualquier navegador para explorarla de forma interactiva.
